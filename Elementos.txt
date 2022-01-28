@@ -1,0 +1,71 @@
+# INICIALIZALÇÃO
+
+LOGIN E SENHA:
+LOGIN
+<input class="login" id="txtUsuario" maxlength="15" name="Usuario.DsLogin" type="text" value=""> 
+SENHA:
+<input class="login" id="txtSenha" name="Senha" type="password" value="">
+OK:
+<input type="image" name="btnEntrar" id="btnEntrar" src="/content/images/teclado/oktc-largo.gif" style="border-width: 0px;">
+
+# CONFIGURA ACESSO À DADOS DESEJADOS (PERCORRE CAMINHO ATÉ AS TABELAS ATIVAS)
+MENU:
+<span class="">Menu</span>
+//*[@id="browser"]/li/span
+
+TABELA DE JUROS:
+<span class="folder">&nbsp; Tabelas de Juros</span>
+//*[@id="ulMenu"]/li[10]/span
+//*[@id="ulMenu"]/li[*]/span (xpath dinâmico)
+
+CONSULTA:
+<a href="/TabelasJuros/Consulta" class="">Consulta</a>
+//*[@id="ulMenu"]/li[10]/ul/li/span/a
+
+
+# PREENCHE FILTROS COM CONFIGURAÇÕES DAS TABELAS DESEJADAS (ATIVAS)
+CORBAN:
+//*[@id="ddlFiltroCorban_chzn"]/a/span => "13083 CEDIBRA"
+//*[@id="ddlFiltroCorban_chzn"]/a/div/b -> SETA
+
+SUB-CORBAN:
+//*[@id="ddlFiltroCorbanSub_chzn"]/a/span => "3758 CORPORAÇÕES CEDIBRA LTDA"
+//*[@id="ddlFiltroCorbanSub_chzn"]/a/div/b -> SETA
+
+SITUAÇÃO:
+//*[@id="ddlFiltroSituacao_chzn"]/a/span => "ATIVA"
+//*[@id="ddlFiltroSituacao_chzn"]/a/div/b -> SETA
+
+ABA TABELAS ATIVAS:
+<span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+//*[@id="ui-accordion-divPrincipal-header-1"]/span
+
+//*[@id="ui-accordion-divPrincipal-header-2"]/span
+
+***ERROS***
+1) ElementNotInteractableException: element not interactable
+   (Session info: chrome=97.0.4692.99)
+
+
+# BAIXA "TABELAS RESUMO - PDF" ITERADAMENTE (DIRECIONANDO PARA PASTA DOCUMENTOS NO COMPUTADOR)
+
+# CRIA TABELA "Safra_Sacraping" NO MODELO "CGR" EM PANDAS
+
+# COLETA DADOS DE "TABELAS RESUMO - PDF" E SALVA NA TABELA "Safra_Scraping - PANDAS" NAS RESPECTIVAS COLUNAS
+
+# CONVERTE VALORES DAS COLUNAS NOS TIPOS A SEREM USADOS NOS CÁLCULOS DAS TABELAS EM EXCEL
+
+# CRIA E EXPORTA PLANILHA "Safra_Scraping.xlsx" COMPLETA NA PASTA DOCUMENTOS
+
+
+
+Erros:
+
+1) <__main__.SafraScrapping at 0x1dc05e9b160> => Fecha-se o chrome
+
+2) NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"[id="txtUsuario"]"}
+  (Session info: chrome=97.0.4692.99)
+
+
+
+
