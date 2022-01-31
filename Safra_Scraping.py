@@ -23,7 +23,6 @@ class SafraScrapping():
         time.sleep(rd.uniform(3,3.5))
         self.driver.find_element_by_id('btnEntrar').click()
         time.sleep(rd.uniform(2.8,3.8))
-        #self.driver.find_element_by_xpath('//*[@id="browser"]/li/span').click()
         
     # CONFIGURA ACESSO À DADOS DESEJADOS (PERCORRE CAMINHO ATÉ AS TABELAS ATIVAS)
     def acess_config(self):
@@ -35,17 +34,27 @@ class SafraScrapping():
         time.sleep(rd.uniform(1,2.2))
         
     # PREENCHE FILTROS COM CONFIGURAÇÕES DAS TABELAS DESEJADAS (ATIVAS)
-    def fill_forms(self):
-        self.driver.find_element_by_xpath('//*[@id="ddlFiltroCorban_chzn"]/a/div/b').send_keys('13083 CEDIBRA' + Keys.ENTER)
-        time.sleep(rd.uniform(1.8,2.8))
-        self.driver.find_element_by_xpath('//*[@id="ddlFiltroCorbanSub_chzn"]/a/div/b').send_keys('3758 CORPORAÇÕES CEDIBRA LTDA' + Keys.ENTER)
-        time.sleep(rd.uniform(1.8,2.8))
-        self.driver.find_element_by_xpath('//*[@id="ddlFiltroSituacao_chzn"]/a/div/b').send_keys('ATIVA' + Keys.ENTER)
-        time.sleep(rd.uniform(1.8,2.8))
-        self.driver.find_element_by_xpath('//*[@id="ui-accordion-divPrincipal-header-1"]/span').click()
-        time.sleep(rd.uniform(1.8,2.8))
+    def fill_forms(self):   
+        '''FUNCAO AINDA INCOMPLETA, MOTIVO: A PAGINA DO SAFRA JA INICIALIZA ESTA PARTE COM TODOS OS 
+        PARAMETROS DESEJADOS PREENCHIDOS. POREM, FUTURAMENTE PREENCHER POR MEDIDA DE SEGURANCA, ISTO E, 
+        CASO A PLATAFORMA ALTERE O PADRAO DE PREENCHIMENTO PARA OUTRO NAO DESEJADO.
+        '''
+        self.driver.find_element_by_xpath('//*[@id="btnPesquisarCadastro"]/span').click()
+# =============================================================================
+#         time.sleep(rd.uniform(1.8,2.8))
+#         self.driver.find_element_by_xpath('//*[@id="ddlFiltroCorbanSub_chzn"]/a/div/b').send_keys('3758 CORPORAÇÕES CEDIBRA LTDA' + Keys.ENTER)
+#         self.driver.find_element_by_xpath('//*[@id="ddlFiltroCorban_chzn"]/a/div/b').send_keys('13083 CEDIBRA' + Keys.ENTER)
+#         time.sleep(rd.uniform(1.8,2.8))
+#         self.driver.find_element_by_xpath('//*[@id="ddlFiltroSituacao_chzn"]/a/div/b').send_keys('ATIVA' + Keys.ENTER)
+#         time.sleep(rd.uniform(1.8,2.8))
+#         self.driver.find_element_by_xpath('//*[@id="ui-accordion-divPrincipal-header-1"]/span').click()
+#         time.sleep(rd.uniform(1.8,2.8))
+# =============================================================================
     
     # ACESSA ABA DAS TABELAS ATIVAS
+    '''
+    ESTA ETAPA ACAOMPANHARA A SEQUENCIA DE MELHORIAS DA FUNCAO ANTERIOR.
+    '''
     
     # BAIXA "TABELAS RESUMO - PDF" ITERADAMENTE (DIRECIONANDO PARA PASTA DOCUMENTOS NO COMPUTADOR)
     
