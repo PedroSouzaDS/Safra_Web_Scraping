@@ -36,6 +36,14 @@ SITUAÇÃO:
 //*[@id="ddlFiltroSituacao_chzn"]/a/span => "ATIVA"
 //*[@id="ddlFiltroSituacao_chzn"]/a/div/b -> SETA
 
+BOTÃO "PESQUISAR":
+<span class="ui-button-text">
+            Pesquisar
+        </span>
+
+//*[@id="btnPesquisarCadastro"]/span
+
+
 ABA TABELAS ATIVAS:
 <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
 //*[@id="ui-accordion-divPrincipal-header-1"]/span
@@ -46,8 +54,23 @@ ABA TABELAS ATIVAS:
 1) ElementNotInteractableException: element not interactable
    (Session info: chrome=97.0.4692.99)
 
+2) NoSuchElementException: no such element: Unable to locate element: {"method":"link text","selector":"Pesquisar"}
+  (Session info: chrome=97.0.4692.99)
+
 
 # BAIXA "TABELAS RESUMO - PDF" ITERADAMENTE (DIRECIONANDO PARA PASTA DOCUMENTOS NO COMPUTADOR)
+
+OPÇÕES DE DOWNLOAD DE ARQUIVOS DAS TABELAS "ENGRENAGEM":
+
+<img src="/Content/Images/ferramentas.png" title="Ferramenta">
+
+//*[@id="222620"]/img
+
+TABELAS RESUMO PDF:
+
+<a id="TabelasFaixas" href="/TabelasJuros/PrintFaixasTabelas/?pIdTabelaJuros=222620" class="contextMenuItem"><img src="/Content/Images/icone-pdf.png" style="vertical-align:middle"> Tabelas Resumo</a>
+
+//*[@id="TabelasFaixas"]
 
 # CRIA TABELA "Safra_Sacraping" NO MODELO "CGR" EM PANDAS
 
@@ -64,6 +87,9 @@ Erros:
 1) <__main__.SafraScrapping at 0x1dc05e9b160> => Fecha-se o chrome
 
 2) NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"[id="txtUsuario"]"}
+  (Session info: chrome=97.0.4692.99)
+
+3) NoSuchElementException: no such element: Unable to locate element: {"method":"link text","selector":"Pesquisar"}
   (Session info: chrome=97.0.4692.99)
 
 
